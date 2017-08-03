@@ -2,9 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-  padding-bottom: 50px;
-}
 
 a:hover,
 a:focus {
@@ -46,7 +43,7 @@ a:focus {
     }
 
     * {
-      font-size: 14px;      
+      font-size: 14px;
       padding-bottom: 0;
     }
   }
@@ -66,12 +63,17 @@ a:focus {
 }
 
 .navbar-brand {
-  padding: 10px;
+  padding: 15px;
+  height: auto;
+}
+
+ul.nav.navbar-nav{
+  margin-top: 17px;
 }
 
 .label-survey {
   margin-right: 5px;
-  
+
   &-quiz {
     background-color: #5B618A;
   }
@@ -172,3 +174,77 @@ a:focus {
   font-size: 13px;
   background-color: #f8f8f8;
 }
+
+
+/* navbar */
+
+$bgDefault      : #0c151e;
+$bgHighlight    : #12202d;
+$colDefault     : #2eb7d9;
+$colHighlight   : #ffffff;
+$dropDown       : true;
+.navbar-default {
+  background-color: $bgDefault;
+  border-color: $bgHighlight;
+  .navbar-brand {
+    color: $colDefault;
+    &:hover, &:focus {
+      color: $colHighlight; }}
+  .navbar-text {
+    color: $colDefault; }
+  .navbar-nav {
+    > li {
+      > a {
+        color: $colDefault;
+        &:hover,  &:focus {
+          color: $colHighlight; }}
+      @if $dropDown {
+        > .dropdown-menu {
+          background-color: $bgDefault;
+          > li {
+            > a {
+              color: $colDefault;
+              &:hover,  &:focus {
+                color: $colHighlight;
+                background-color: $bgHighlight; }}
+            &.divider {
+              background-color: $bgHighlight;}}}}}
+    @if $dropDown {
+      .open .dropdown-menu > .active {
+        > a, > a:hover, > a:focus {
+          color: $colHighlight;
+          background-color: $bgHighlight; }}}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}
+    > .open {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+  .navbar-toggle {
+    border-color: $bgHighlight;
+    &:hover, &:focus {
+      background-color: $bgHighlight; }
+    .icon-bar {
+      background-color: $colDefault; }}
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $colDefault; }
+  .navbar-link {
+    color: $colDefault;
+    &:hover {
+      color: $colHighlight; }}}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+}
+
+.questionnaires_index h1{text-align: center;}
