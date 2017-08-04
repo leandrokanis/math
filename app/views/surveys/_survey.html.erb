@@ -9,7 +9,7 @@
 
 
       <div class="pad-ver">
-        <%= link_to survey_path(survey.id), class: 'btn btn-lg btn-danger btn-icon btn-hover-primary', method: :delete do %>
+        <%= link_to new_attempt_path(survey_id: survey.id), class: 'btn btn-lg btn-danger btn-icon btn-hover-primary' do %>
           Começar
         <% end %>
       </div>

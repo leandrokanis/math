@@ -70,7 +70,8 @@ module SurveysHelper
   def get_survey_types
     { 0 => 'quiz',
       1 => 'score',
-      2 => 'poll' }
+      2 => 'poll',
+      3 => 'associative'}
   end
 
   def is_quiz? something
@@ -83,6 +84,10 @@ module SurveysHelper
 
   def is_poll? something
     something == 2 || something == 'poll'
+  end
+
+  def is_assossiative? something
+    something == 3 || something == 'associative'
   end
 
   def get_weight option
