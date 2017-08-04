@@ -52,7 +52,7 @@ module SurveysHelper
   end
 
   def get_color_of_option answer, option
-    if is_quiz?(answer.question.survey.survey_type)
+    if is_multiplechoice?(answer.question.survey.survey_type)
       if option.correct
         'bg-success'
       elsif the_chosen_one?(answer, option)
@@ -68,14 +68,14 @@ module SurveysHelper
   end
 
   def get_survey_types
-    { 0 => 'quiz',
+    { 0 => 'multiplechoice',
       1 => 'score',
       2 => 'poll',
       3 => 'associative'}
   end
 
-  def is_quiz? something
-    something == 0 || something == 'quiz'
+  def is_multiplechoice? something
+    something == 0 || something == 'multiplechoice'
   end
 
   def is_score? something
