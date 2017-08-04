@@ -4,20 +4,48 @@
 </h2>
 <%= form_for(@attempt, url: attempt_scope(@attempt)) do |f| %>
   <%= hidden_field_tag :survey_id, @survey.id %>
-  <ol class="questions">
     <%= f.fields_for :answers, get_answer_fields(@attempt) do |answer_fields| %>
-      <li>
         <% question = answer_fields.object.question %>
-        <p class="question"><%= question.text %></p>
-        <ul class="options">
-          <%= collection_radio_buttons('survey_attempt[answers_attributes]', question.id, question.options, :id, :text) do |b| %>
-            <li class="radio">
-              <%= b.label { b.radio_button + b.text } %>
-            </li>
-          <% end %>
-        </ul>
-      </li>
-    <% end -%>
-  </ol>
-  <%= f.submit "Submit", class: 'btn btn-default' %>
+        <div class="container bg-info">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3><span class="label label-warning" id="qid"><%= question.id %></span> <%= question.text %></h3>
+              </div>
+              <div class="modal-body">
+                <div class="col-xs-3 col-xs-offset-5">
+                  <div id="loadbar" style="display: none;">
+                    <div class="blockG" id="rotateG_01"></div>
+                    <div class="blockG" id="rotateG_02"></div>
+                    <div class="blockG" id="rotateG_03"></div>
+                    <div class="blockG" id="rotateG_04"></div>
+                    <div class="blockG" id="rotateG_05"></div>
+                    <div class="blockG" id="rotateG_06"></div>
+                    <div class="blockG" id="rotateG_07"></div>
+                    <div class="blockG" id="rotateG_08"></div>
+                  </div>
+                </div>
+                <div class="quiz" id="quiz" data-toggle="buttons">
+                  <%= collection_radio_buttons('survey_attempt[answers_attributes]', question.id, question.options, :id, :text) do |b| %>
+                  <label class="element-animation1 btn btn-lg btn-primary btn-block">
+                    <span class="btn-label">
+                      <i class="fa fa-chevron-right"></i>
+                    </span>
+                    <%= b.radio_button %> <%= b.text %>
+                  </label>
+                  <% end %>
+                </div>
+              </div>
+              <div class="modal-footer text-muted">
+                <span id="answer"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end -%>
+      <div class="row">
+        <div class="col-md-2 col-md-offset-5">
+          <%= f.submit "Enviar", class: 'btn btn-lg btn-danger' %>
+        </div>
+      </div>
 <% end -%>
