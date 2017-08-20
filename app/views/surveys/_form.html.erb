@@ -27,7 +27,7 @@
         <br/>
         <div> In this type of survey, you have to enter a score for each question option (negative values are allowed) </div>
       <% end -%>
-      <%= f.fields_for :questions do |builder| %>
+      <%= f.fields_for :questions, html: {multipart: true} do |builder| %>
         <%= render 'question_fields', f: builder %>
       <% end %>
     </div>
