@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170818185037) do
+ActiveRecord::Schema.define(version: 20170824191544) do
 
   create_table "survey_answers", force: :cascade do |t|
     t.integer  "attempt_id"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20170818185037) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "survey_type"
+    t.integer  "bloom_level"
   end
 
   create_table "users", force: :cascade do |t|

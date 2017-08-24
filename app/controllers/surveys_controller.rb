@@ -64,12 +64,13 @@ class SurveysController < ApplicationController
         :active,
         :attempts_number,
         :survey_type,
+        :bloom_level,
         :id,
         :_destroy,
         :questions_attributes => [
           :text,
           :survey,
-          :image,
+          #:image,
           :id,
           :_destroy,
           :options_attributes => [:text, :correct, :weight, :id, :_destroy]
