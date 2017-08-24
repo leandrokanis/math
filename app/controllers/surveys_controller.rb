@@ -70,7 +70,7 @@ class SurveysController < ApplicationController
         :questions_attributes => [
           :text,
           :survey,
-          #:image,
+          :image,
           :id,
           :_destroy,
           :options_attributes => [:text, :correct, :weight, :id, :_destroy]
