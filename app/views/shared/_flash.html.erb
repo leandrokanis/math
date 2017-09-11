@@ -3,6 +3,9 @@
     <% flash.each do |name, msg| %>
       <div class="alert alert-<%= correct_flash_name(name) %>" role="alert">
         <%= msg %>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+
       </div>
     <% end %>
   </div>

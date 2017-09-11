@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -7,10 +8,12 @@ Rails.application.routes.draw do
   root 'surveys#index'
   resources 'surveys'
   resources 'attempts'
-  resources 'users', only: [:create]
+  # resources 'users', only: [:create]
 
   delete 'attempts/:survey_id/:user_id' => 'attempts#delete_user_attempts', as: :delete_user_attempts
-  post 'user/:id/change_name' => 'users#change_name', as: :change_user_name
+  devise_scope :user do
+     get '/users/sign_out' => 'devise/sessions#destroy'
+  end
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

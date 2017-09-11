@@ -27,17 +27,23 @@
             </ul>
           </li>
         </ul>
-        <% if current_user %>
           <ul class="nav navbar-nav navbar-right">
-            <li>
-              <p class="navbar-text">
-                Logado como:
-                <b> <%= current_user.name %> </b>
-                <%= link_to '(mudar nome)', '#', 'data-toggle': 'modal', 'data-target': '#submit-name-modal' %>
-              </p>
-            </li>
+              <li>
+                <p class="navbar-text">
+                  <%= link_to "Sair", destroy_user_session_path %>
+                </p>
+              </li>
+              <li>
+                <p class="navbar-text">
+                  <%= link_to "Sign Up", new_user_registration_path %>
+                </p>
+              </li>
+              <li>
+                <p class="navbar-text">
+                  <%= link_to "Login", new_user_session_path %>
+                </p>
+              </li>
           </ul>
-        <% end %>
       </div>
     </div>
   </div>

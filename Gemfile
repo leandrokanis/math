@@ -60,3 +60,4 @@ gem 'rails_12factor', group: :production
 
 ruby "2.2.2"
 gem "paperclip", "~> 5.0.0"
+gem 'devise'

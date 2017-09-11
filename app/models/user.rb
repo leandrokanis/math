@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
-  validates :name, length: { maximum: 30 }, presence: true
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+  #validates :name, length: { maximum: 30 }, presence: true
   has_surveys
 end
