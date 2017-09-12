@@ -20,9 +20,9 @@ module ApplicationHelper
     current_page?(link_path) ? 'active' : nil
   end
 
-  def current_user
-    @user ||= User.find_by(id: 2)
-  end
+  # def current_user
+  #   @user ||= User.find_by(id: 2)
+  # end
 
   # def user_form
   #   common_options = { validate: true, html: { class: 'user-form' } }
