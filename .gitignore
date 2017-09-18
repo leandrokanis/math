@@ -13,4 +13,4 @@
 /tmp
 .env
 /public/system/
-*.sqlite3
+db/development.sqlite3

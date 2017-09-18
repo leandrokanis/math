@@ -1,0 +1,11 @@
+<% unless user_signed_in? %>
+  <%= render 'visitor' %>
+<% end %>
+
+<% if user_signed_in? and current_user.student? and not current_user.teacher?  %>
+  <%= render 'student' %>
+<% end %>
+
+<% if user_signed_in? and current_user.teacher? %>
+  <%= render 'teacher' %>
+<% end %>
