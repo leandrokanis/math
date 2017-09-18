@@ -3,6 +3,7 @@ class AttemptsController < ApplicationController
   helper 'surveys'
 
   before_filter :load_survey, only: [:new, :create]
+  before_action :authenticate_user!
 
   def index
     @surveys = Survey::Survey.active
