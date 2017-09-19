@@ -4,23 +4,37 @@
   <%= devise_error_messages! %>
 
     <div class="field">
-      <%= f.label :username %><br />
+      <%= f.label :username, "Nome" %><br />
       <%= f.text_field :username, autofocus: true %>
     </div>
 
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
-    </div>
+    <%= f.email_field :email, class: 'hidden' %>
 
     <div class="field">
-      <%= f.label :password %><br />
+      <%= f.label :password, "Senha" %><br />
       <%= f.text_field :password, autocomplete: "off" %>
     </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "OK" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+
+<script type="text/javascript">
+function create_email() {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < 10; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  return text + "@test.com";
+}
+
+$( document ).ready(function() {
+    $("input[type=email]").val(create_email());
+});
+
+</script>
