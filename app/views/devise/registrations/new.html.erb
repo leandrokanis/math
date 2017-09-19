@@ -1,40 +1,7 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-    <div class="field">
-      <%= f.label :username, "Nome" %><br />
-      <%= f.text_field :username, autofocus: true %>
+<div class="register">
+  <div class="materialContainer">
+    <div class="box">
+      <%= render 'register' %>
     </div>
-
-    <%= f.email_field :email, class: 'hidden' %>
-
-    <div class="field">
-      <%= f.label :password, "Senha" %><br />
-      <%= f.text_field :password, autocomplete: "off" %>
-    </div>
-
-  <div class="actions">
-    <%= f.submit "OK" %>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
-
-
-<script type="text/javascript">
-function create_email() {
-  var text = "";
-  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-  for (var i = 0; i < 10; i++)
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
-  return text + "@test.com";
-}
-
-$( document ).ready(function() {
-    $("input[type=email]").val(create_email());
-});
-
-</script>
+</div>

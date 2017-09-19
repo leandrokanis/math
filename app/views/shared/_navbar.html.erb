@@ -14,12 +14,14 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
+          <% if user_signed_in? %>
           <li class="<%= is_active?(surveys_path) %>">
             <%= link_to surveys_path do %>
-              Atividades
-              <span class='badge'> <%= surveys_count %> </span>
+            Atividades
+            <span class='badge'> <%= surveys_count %> </span>
             <% end -%>
           </li>
+          <% end -%>
           <% if user_signed_in? and current_user.teacher?%>
             <li class="dropdown <%= is_active?(new_survey_path) %>">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Criar Atividade <span class="caret"></span></a>
@@ -34,7 +36,7 @@
             <% unless user_signed_in? %>
             <li>
               <p class="navbar-text">
-                <%= link_to "Novo usuário", new_user_registration_path %>
+                <%= link_to "Criar astronauta", new_user_registration_path %>
               </p>
             </li>
             <li>

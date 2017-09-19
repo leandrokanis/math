@@ -1,0 +1,41 @@
+<div class="title">Criar Astronauta</div>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="input">
+    <%= f.label :username, "Nome" %><br />
+    <%= f.text_field :username, autofocus: true %>
+    <%= f.email_field :email, class: "hidden" %>
+    <span class="spin"></span>
+  </div>
+
+  <div class="input">
+    <%= f.label :password, "Senha" %>
+    <%= f.text_field :password, autocomplete: "off" %>
+    <span class="spin"></span>
+  </div>
+
+  <div class="botao-login">
+    <%= f.submit "Criar", class:'btn btn-hero' %><br/>
+    <%= link_to "Já sou um astronauta", new_user_session_path, class:"criar-conta" %>
+  </div>
+<% end %>
+
+
+
+<script type="text/javascript">
+function create_email() {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < 10; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  return text + "@test.com";
+}
+
+$( document ).ready(function() {
+    $("input[type=email]").val(create_email());
+});
+
+</script>
