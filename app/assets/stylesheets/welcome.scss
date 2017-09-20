@@ -134,3 +134,52 @@ Image credits: unsplash.com
 @media screen and (max-width: 640px){
     .hero h1 { font-size: 4em; }
 }
+
+.wrimagecard{
+	margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    position: relative;
+    background: #fff;
+    border-radius: 4px;
+    transition: all 0.2s cubic-bezier(0.42, 0, 0, 1.82);
+    box-shadow: 2px 4px 8px 0px rgba(46,61,73,0.2);
+}
+.wrimagecard .fa{
+	position: relative;
+    font-size: 70px;
+}
+.wrimagecard-topimage_header{
+  padding: 40px;
+  text-align: center;
+}
+a.wrimagecard:hover, .wrimagecard-topimage:hover {
+    box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
+}
+.wrimagecard-topimage a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.wrimagecard-topimage_title {
+    padding: 20px 24px;
+    height: 80px;
+    padding-bottom: 0.75rem;
+    position: relative;
+}
+.wrimagecard-topimage a {
+    border-bottom: none;
+    text-decoration: none;
+    color: #525c65;
+    transition: color 0.3s ease;
+}
+
+.wrimagecard-topimage_header i{color: #FFF;}
+.ver-atividade{background: linear-gradient(40deg,#45cafc,#303f9f);}
+.ver-atividade:hover{background: linear-gradient(140deg,#45cafc,#303f9f);}
+.criar-atividade{background: linear-gradient(40deg,#ee0979,#ff6a00);}
+.criar-atividade:hover{background: linear-gradient(140deg,#ee0979,#ff6a00);}
+.ver-turma{background: linear-gradient(40deg,#00467F,#A5CC82);}
+.ver-turma:hover{background: linear-gradient(140deg,#00467F,#A5CC82);}
+.ver-relatorio{background: linear-gradient(40deg,#00c3ff,#ffff1c)}
+.ver-relatorio:hover{background: linear-gradient(140deg,#00c3ff,#ffff1c)}
