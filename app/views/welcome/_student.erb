@@ -1,2 +1,11 @@
-<h1>Bem vindo!</h1>
-<p>Embarque na nossa nave e viagem pelo Universo da matemática!</p>
+<div class="container">
+  <div class="row" style="margin-top: 20px;">
+    <div class="col-md-9 content">
+      <h1>Atividades</h1>
+        <%= render partial: "surveys/survey", locals: {} %>
+    </div>
+    <div class="col-md-3 sidebar">
+      <%= render 'ranking' %>
+    </div>
+  </div>
+</div>

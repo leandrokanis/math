@@ -4,7 +4,7 @@
     <div class="widget-header bg-primary"></div>
     <div class="widget-body text-center">
       <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="http://lorempixel.com/215/215/abstract/">
-      <h4 class="mar-no"><%= link_to survey.name, new_attempt_path(survey_id: survey.id), class: 'survey-name' %></h4>
+      <h4 class="mar-no"><%= link_to survey.names, new_attempt_path(survey_id: survey.id), class: 'survey-name' %></h4>
       <p class="text-muted mar-btm"> <%= "#{survey.description}" %> </p>
 
 

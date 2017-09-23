@@ -879,3 +879,19 @@ label .fa {
   margin-top: 30px;
   display: block;
 }
+
+.panel-default>.panel-heading {
+    color: #FFF;
+    background: linear-gradient(40deg, #45cafc, #303f9f);
+    border-color: #ddd;
+    padding: 20px 15px;
+}
+
+.flash>.alert{
+  text-align: center;
+  margin: 20px 0;
+}
+
+.content{
+  background-color: #FFF;
+}

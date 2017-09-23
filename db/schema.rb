@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20170919174633) do
     t.text     "description"
     t.integer  "attempts_number", default: 0
     t.boolean  "finished",        default: false
-    t.boolean  "active",          default: false
+    t.boolean  "active",          default: true
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "survey_type"
@@ -65,7 +65,6 @@ ActiveRecord::Schema.define(version: 20170919174633) do
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.string   "name"
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"

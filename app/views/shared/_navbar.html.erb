@@ -49,7 +49,7 @@
             <% if user_signed_in? %>
             <li>
               <p class="navbar-text">
-                <%= current_user.email %>
+                <%= current_user.username %>
               </p>
               <p class="navbar-text">
                 <%= link_to "Sair", destroy_user_session_path, target: :_top  %>
