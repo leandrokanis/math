@@ -1,16 +1,21 @@
 <div class="container">
-  <div class="questionnaires_<%= action_name %>">
-    <h1>
-      Atividades
-    </h1>
-    <hr>
-    <% if @surveys.empty? %>
-      <p> Não há lições. </p>
-    <% else %>
-      <div class="row bootstrap snippets">
-        <%= render partial: 'survey', collection: @surveys %>
-      </div>
-      <%= paginate @surveys %>
-    <% end %>
+  <div class="row questionnaires_<%= action_name %>">
+      <h1>
+        Atividades
+      </h1>
+      <div class="col-md-9">
+      <hr>
+      <% if @surveys.empty? %>
+        <p> Não há lições. </p>
+      <% else %>
+        <div class="row bootstrap snippets">
+          <%= render partial: 'survey', collection: @surveys %>
+        </div>
+        <%= paginate @surveys %>
+      <% end %>
+    </div>
+  <div class="col-md-3 sidebar">
+    <%= render 'shared/ranking' %>
   </div>
+</div>
 </div>

@@ -1,11 +1,1 @@
-<div class="container">
-  <div class="row" style="margin-top: 20px;">
-    <div class="col-md-9 content">
-      <h1>Atividades</h1>
-        <%= render partial: "surveys/survey", locals: {} %>
-    </div>
-    <div class="col-md-3 sidebar">
-      <%= render 'ranking' %>
-    </div>
-  </div>
-</div>
+<% controller.redirect_to surveys_path %>
