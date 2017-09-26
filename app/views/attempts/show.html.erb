@@ -1,25 +1,16 @@
 <div class="container">
-  <h2 class="survey-title">
-    <%= @attempt.survey.name %>
-    <p><small><%= @attempt.survey.description %></small></p>
-  </h2>
-  <ol class="questions">
-    <% @attempt.answers.each do |answer| %>
-      <li>
-        <p class="question"> <%= answer.question.text %> </p>
-        <ul class="options">
-          <% answer.question.options.each do |option| %>
-            <li class="radio">
-              <label>
-                <%= radio_button_tag '', '', the_chosen_one?(answer, option), disabled: true %>
-                <% color = get_color_of_option(answer, option) %>
-                <span class="<%= color %> <%= the_chosen_one?(answer, option) %>"> <%= option.text %> <%= get_weight(option) %> </span>
-              </label>
-              <p class="answers-number"> <%= number_of_people_who_also_answered(option.id) %> </p>
-            </li>
-          <% end %>
-        </ul>
-      </li>
-    <% end %>
-  <ol>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <h2 class="modal-header">
+        Missão cumprida! +10 XP
+        <p><small><%= @attempt.survey.name %></small></p>
+      </h2>
+      <div class="modal-body celebration">
+        <%= image_tag "celebration.gif" %>
+      </div>
+      <div class="modal-footer">
+        <%= link_to 'Continuar', surveys_path, class: 'btn btn-lg btn-success' %>
+      </div>
+    </div>
+  </div>
 </div>
