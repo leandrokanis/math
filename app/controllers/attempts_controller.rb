@@ -29,6 +29,9 @@ class AttemptsController < ApplicationController
     if @attempt.valid? && @attempt.save
       correct_options_text = @survey.correct_options.present? ? 'Bellow are the correct answers marked in green' : ''
       view_context.attempt_winner(@attempt)
+      unless view_context.is_already_winner?(@attempt.survey, @attempt.participant_id)
+        view_context.give_experience(@attempt.participant, 10)
+      end
       redirect_to attempt_path(@attempt.id)
     else
       build_flash(@attempt)

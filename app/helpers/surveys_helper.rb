@@ -60,6 +60,11 @@ module SurveysHelper
     attempt.save
   end
 
+  def give_experience user, points
+    user.experience = user.experience + points
+    user.save
+  end
+
   def number_of_people_who_also_answered option_id
     count = number_of_people_who_also_answered_count(option_id)
     "<span class='number'> #{count} </span> #{'answer'.pluralize}".html_safe
@@ -116,6 +121,10 @@ module SurveysHelper
 
   def surveys_count type = get_survey_types.keys
     Survey::Survey.where(survey_type: type).count
+  end
+
+  def is_already_winner? survey, participant_id
+    survey.attempts.where(participant_id:participant_id,winner:true).count > 0
   end
 
   def number_of_questions survey

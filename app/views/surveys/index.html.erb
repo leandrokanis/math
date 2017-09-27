@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row questionnaires_<%= action_name %>">
-      <h1>
-        Missões
-      </h1>
-      <div class="col-md-9">
+    <h1>
+      Missões
+    </h1>
+    <div class="col-md-9">
       <% if @surveys.empty? %>
         <p> Não há lições. </p>
       <% else %>
@@ -13,8 +13,8 @@
         <%= paginate @surveys %>
       <% end %>
     </div>
-  <div class="col-md-3 sidebar">
-    <%= render 'shared/ranking' %>
+    <div class="col-md-3 sidebar">
+      <%= render 'shared/ranking' %>
+    </div>
   </div>
-</div>
 </div>
