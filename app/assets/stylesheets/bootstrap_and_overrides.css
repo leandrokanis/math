@@ -260,7 +260,8 @@ label .fa {
 
 .modal-header {
     background-color: transparent;
-    color: inherit
+    color: inherit; 
+    text-align: center;
 }
 
 .modal-body {

@@ -46,6 +46,20 @@ module SurveysHelper
     if answer.option_id == option.id then 'chosen' else nil end
   end
 
+  def minimum_score attempt
+    success_percent = 70
+    number_of_questions(attempt.survey) * success_percent/100
+  end
+
+  def attempt_winner attempt
+    if attempt.score >= minimum_score(attempt)
+      attempt.winner = true
+    else
+      attempt.winner = false
+    end
+    attempt.save
+  end
+
   def number_of_people_who_also_answered option_id
     count = number_of_people_who_also_answered_count(option_id)
     "<span class='number'> #{count} </span> #{'answer'.pluralize}".html_safe
