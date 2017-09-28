@@ -124,7 +124,18 @@ module SurveysHelper
   end
 
   def is_already_winner? survey, participant_id
-    survey.attempts.where(participant_id:participant_id,winner:true).count > 0
+    survey.attempts.where(participant_id:participant_id,winner:true).any?
+  end
+
+  def is_level_available? user, level
+    surveys = Survey::Survey.where(bloom_level:level-1)
+    unsolved_missions = Array.new
+    for s in surveys
+      unless is_already_winner?(s, user.id)
+        unsolved_missions.push(s)
+      end
+    end
+    unsolved_missions.empty?
   end
 
   def number_of_questions survey

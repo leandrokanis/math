@@ -10,14 +10,26 @@
       <div class="widget-img img-circle img-border-light card_bloom_level nivel_<%= "#{survey.bloom_level}" %>"> Nível <p class="level_number"><%= "#{survey.bloom_level}" %></p>   </div>
       <h4 class="mar-no"><%= "#{survey.name}" %></h4>
       <p class="text-muted mar-btm"> <%= "#{survey.description}" %> </p>
-
-
       <div class="pad-ver">
-        <% unless is_already_winner?(survey, current_user.id) %>
-          <%= link_to 'Começar', new_attempt_path(survey_id: survey.id), class: 'btn btn-lg btn-danger btn-icon btn-hover-primary' %>
+
+      <% if user_signed_in? and not current_user.teacher %>
+        <% unless is_level_available?(current_user, survey.bloom_level) %>
+          <button type="button" class="btn btn-default btn-lg" disabled="disabled">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+            Nível <%= "#{survey.bloom_level}" %> bloqueado
+          </button>
         <% else %>
-          <%= link_to 'Refazer', new_attempt_path(survey_id: survey.id), class: 'btn btn-lg btn-default btn-icon btn-hover-primary' %>
+          <% unless is_already_winner?(survey, current_user.id) %>
+            <%= link_to 'Começar', new_attempt_path(survey_id: survey.id), class: 'btn btn-lg btn-danger btn-icon btn-hover-primary' %>
+          <% else %>
+            <%= link_to 'Refazer', new_attempt_path(survey_id: survey.id), class: 'btn btn-lg btn-default btn-icon btn-hover-primary' %>
+          <% end %>
         <% end %>
+      <% end %>
+
+      <% if user_signed_in? and current_user.teacher %>
+      <%= link_to 'Visualizar', new_attempt_path(survey_id: survey.id), class: 'btn btn-lg btn-primary btn-icon' %>
+      <% end %>
       </div>
 
       <% if user_signed_in? and current_user.teacher %>
@@ -37,14 +49,14 @@
     				</li>
     			</ul>
       </div>
-        <div class="pad-ver">
-          <%= link_to survey_path(survey.id), class: 'btn btn-sm btn-default btn-icon btn-hover-primary icon-lg add-tooltip', method: :delete, data: {confirm: "Deseja apagar esta atividade?"} do %>
-          <i class="fa fa-trash-o"> Apagar</i>
-          <% end %>
-          <%= link_to edit_survey_path(survey.id), class: 'btn btn-sm btn-default btn-icon btn-hover-primary icon-lg add-tooltip' do %>
-          <i class="fa fa-pencil-square-o"> Editar</i>
-          <% end %>
-        </div>
+      <div class="pad-ver">
+        <%= link_to survey_path(survey.id), class: 'btn btn-sm btn-default btn-icon btn-hover-primary icon-lg add-tooltip', method: :delete, data: {confirm: "Deseja apagar esta atividade?"} do %>
+        <i class="fa fa-trash-o"> Apagar</i>
+        <% end %>
+        <%= link_to edit_survey_path(survey.id), class: 'btn btn-sm btn-default btn-icon btn-hover-primary icon-lg add-tooltip' do %>
+        <i class="fa fa-pencil-square-o"> Editar</i>
+        <% end %>
+      </div>
       <% end %>
     </div>
   </div>
