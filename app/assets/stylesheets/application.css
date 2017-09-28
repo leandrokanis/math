@@ -18,3 +18,24 @@
 }
 .celebration {padding:0; height: 45vh; text-align: center;}
 .celebration img {height:100%}
+.check-success {
+    background: #FFF;
+    border-radius: 20px;
+    color: #99cc00;
+    float: right;
+    font-size: 30px;
+    padding: 4px 6px;
+}
+.card_bloom_level{
+  background-color: #CCC;
+  color: #FFF;
+  font-weight: bold;
+  padding-top: 5px;
+}
+.level_number{
+  font-size: 40px;
+  line-height: 0.75;
+}
+.nivel_1{background-color: #44c5f9}
+.nivel_2{background-color: #f18723}
+.nivel_3{background-color: #f6373f}

@@ -37,6 +37,9 @@ body{
     min-height: 125px;
     position: relative;
     overflow: hidden;
+    background-color: #44c5f9;
+    background-position: center top !important;
+    background-repeat: no-repeat;
 }
 .panel .panel-footer, .panel>:last-child {
     border-bottom-left-radius: 0;
@@ -260,7 +263,7 @@ label .fa {
 
 .modal-header {
     background-color: transparent;
-    color: inherit; 
+    color: inherit;
     text-align: center;
 }
 
