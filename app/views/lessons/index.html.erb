@@ -1,28 +1,19 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Lessons</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @lessons.each do |lesson| %>
-      <tr>
-        <td><%= lesson.name %></td>
-        <td><%= link_to 'Show', lesson %></td>
-        <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
-        <td><%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-
-</table>
-
-<br>
-
-<%= link_to 'New Lesson', new_lesson_path %>
+<div class="container">
+  <div class="row questionnaires_<%= action_name %>">
+    <h1>Planetas</h1>
+    <div class="col-md-9">
+      <%= link_to 'Novo Planeta', new_lesson_path %>
+      <ul>
+        <% @lessons.each do |lesson| %>
+          <li>
+            <a href="<%= surveys_path + '?lesson=' + lesson.id.to_s() %> ">
+              <%= lesson.name %>
+            </a>
+            <%= link_to 'Show', lesson %>
+            <%= link_to 'Edit', edit_lesson_path(lesson) %>
+            <%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+</div>
