@@ -22,9 +22,11 @@
     background: #FFF;
     border-radius: 20px;
     color: #99cc00;
-    float: right;
     font-size: 30px;
     padding: 4px 6px;
+    top: -12px;
+    right: -12px;
+    position: absolute;
 }
 .card_bloom_level{
   background-color: #CCC;
