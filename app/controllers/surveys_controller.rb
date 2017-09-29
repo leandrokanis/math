@@ -6,8 +6,13 @@ class SurveysController < ApplicationController
   def index
     type = view_context.get_survey_type(params[:type])
     query = if type then Survey::Survey.where(survey_type: type) else Survey::Survey end
+    planet = params[:planet]
+    if planet
+      @surveys = query.where(lesson_id:planet).order(created_at: :desc).page(params[:page]).per(15)
+    else
       @surveys = query.order(created_at: :desc).page(params[:page]).per(15)
     end
+  end
 
     def new
       @survey = Survey::Survey.new(survey_type: view_context.get_survey_type(params[:type]))
@@ -65,6 +70,7 @@ class SurveysController < ApplicationController
         :active,
         :attempts_number,
         :survey_type,
+        :lesson_id,
         :bloom_level,
         :id,
         :_destroy,

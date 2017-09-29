@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170927142129) do
+ActiveRecord::Schema.define(version: 20170929045953) do
+
+  create_table "lessons", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "survey_answers", force: :cascade do |t|
     t.integer  "attempt_id"
@@ -59,8 +65,11 @@ ActiveRecord::Schema.define(version: 20170927142129) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "survey_type"
-    t.integer  "bloom_level"
+    t.integer  "bloom_level",     default: 1
+    t.integer  "lesson_id"
   end
+
+  add_index "survey_surveys", ["lesson_id"], name: "index_survey_surveys_on_lesson_id"
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                             null: false
