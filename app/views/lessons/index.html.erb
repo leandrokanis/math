@@ -3,6 +3,7 @@
     <h1>Planetas</h1>
     <div class="col-md-8 col-md-offset-2">
       <div class="table-responsive list-messages">
+          <% if user_signed_in? and current_user.teacher?%>
         <table class="table table-hover table-striped">
           <tbody>
             <% @lessons.each do |lesson| %>
@@ -35,6 +36,7 @@
           </tbody>
         </table><!-- /.table -->
         <%= link_to 'Novo Planeta', new_lesson_path, target: :_top, class: 'btn btn-success btn-lg' %>
+        <% end %>
       </div><!-- /.mail-box-messages -->
     </div>
 </div>

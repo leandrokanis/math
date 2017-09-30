@@ -11,6 +11,7 @@ class AttemptsController < ApplicationController
 
   def show
     @attempt = Survey::Attempt.find_by(id: params[:id])
+    asdf = "10pxp" if @attempt.winner
     render :access_error if current_user.id != @attempt.participant_id
   end
 
@@ -28,10 +29,10 @@ class AttemptsController < ApplicationController
     @attempt.participant = current_user
     if @attempt.valid? && @attempt.save
       correct_options_text = @survey.correct_options.present? ? 'Bellow are the correct answers marked in green' : ''
-      view_context.attempt_winner(@attempt)
       unless view_context.is_already_winner?(@attempt.survey, @attempt.participant_id)
         view_context.give_experience(@attempt.participant, 10)
       end
+      view_context.attempt_winner(@attempt)
       redirect_to attempt_path(@attempt.id)
     else
       build_flash(@attempt)
