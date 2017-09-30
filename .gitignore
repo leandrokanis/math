@@ -14,3 +14,4 @@
 .env
 /public/system/
 db/development.sqlite3
+db/schema.rb

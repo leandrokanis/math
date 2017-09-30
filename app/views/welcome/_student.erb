@@ -1,1 +1,21 @@
-<% controller.redirect_to surveys_path %>
+<div class="container">
+  <div class="row questionnaires_<%= action_name %> bloco_principal">
+    <div class="col-md-7 col-md-offset-1 bloco_planetas">
+      <h1>Planetas</h1>
+
+        <% @lessons.each do |lesson| %>
+            <div class="col-md-4 col-md-offset-1 planeta">
+              <a href="<%= surveys_path + '?lesson=' + lesson.id.to_s() %> ">
+                <%= image_tag "planeta-"+ lesson.id.to_s() %>
+                <div class="caption">
+                  <h4><%= lesson.name %></h4>
+                </div>
+              </a>
+            </div>
+        <% end %>
+
+    </div>
+    <div class="col-md-3 sidebar">
+      <%= render 'shared/ranking' %>
+    </div>
+</div>
