@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row questionnaires_<%= action_name %>">
-    <h1><%= @lesson.name %></h1>
+    <h1><%= @lesson.name if @lesson %></h1>
     <div class="col-md-10 col-md-offset-1">
       <% if @surveys.empty? %>
         <p>Ainda não há missões neste planeta.</p>

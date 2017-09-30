@@ -8,10 +8,10 @@ class SurveysController < ApplicationController
     query = if type then Survey::Survey.where(survey_type: type) else Survey::Survey end
     if params[:lesson]
       @surveys = query.where(lesson_id:params[:lesson]).order(bloom_level: :asc, created_at: :asc).page(params[:page]).per(16)
+      @lesson = Lesson.find(params[:lesson])
     else
       @surveys = query.order(created_at: :desc).page(params[:page]).per(15)
     end
-    @lesson = Lesson.find(params[:lesson])
   end
 
     def new
