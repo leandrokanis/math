@@ -4,39 +4,39 @@
     <div class="col-md-9">
       <div class="col-md-6">
         <div class="wrimagecard wrimagecard-topimage">
-          <%= link_to surveys_path, target: :_top  do %>
+          <%= link_to lessons_path, target: :_top  do %>
             <div class="wrimagecard-topimage_header ver-atividade">
               <i class="fa fa-th-list"></i>
             </div>
             <div class="wrimagecard-topimage_title">
-              <h4>Ver missões
+              <h4>Administrar Planetas
               <div class="pull-right badge" id="WrControls"></div></h4>
             </div>
           <% end %>
         </div>
       </div>
       <div class="col-md-6">
-          <div class="wrimagecard wrimagecard-topimage">
-            <%= link_to new_survey_path(type: 'multiplechoice'), target: :_top  do %>
-              <div class="wrimagecard-topimage_header criar-atividade">
-                <i class="fa fa-pencil-square"></i>
-              </div>
-              <div class="wrimagecard-topimage_title" >
-                <h4>Criar missão
-                  <div class="pull-right badge" id="WrForms"></div>
-                </h4>
-              </div>
-            <% end %>
-          </div>
+        <div class="wrimagecard wrimagecard-topimage">
+          <%= link_to root_path, target: :_top  do %>
+            <div class="wrimagecard-topimage_header criar-atividade">
+              <i class="fa fa-pencil-square"></i>
+            </div>
+            <div class="wrimagecard-topimage_title" >
+              <h4>Missões
+                <div class="pull-right badge" id="WrForms"></div>
+              </h4>
+            </div>
+          <% end %>
+        </div>
       </div>
       <div class="col-md-6">
         <div class="wrimagecard wrimagecard-topimage">
-          <%= link_to surveys_path, target: :_top  do %>
+          <%= link_to root_path, target: :_top  do %>
             <div class="wrimagecard-topimage_header ver-turma">
               <i class="fa fa-users"></i>
             </div>
             <div class="wrimagecard-topimage_title">
-              <h4>Ver Turma
+              <h4>Alunos
               <div class="pull-right badge" id="WrControls"></div></h4>
             </div>
           <% end %>
@@ -44,7 +44,7 @@
       </div>
       <div class="col-md-6">
           <div class="wrimagecard wrimagecard-topimage">
-            <%= link_to new_survey_path(type: 'multiplechoice'), target: :_top  do %>
+            <%= link_to root_path, target: :_top  do %>
               <div class="wrimagecard-topimage_header ver-relatorio">
                 <i class="fa fa-bar-chart-o"></i>
               </div>

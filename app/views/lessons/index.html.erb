@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row questionnaires_<%= action_name %>">
+    <h1>Planetas</h1>
+    <div class="col-md-8 col-md-offset-2">
+      <div class="table-responsive list-messages">
+        <table class="table table-hover table-striped">
+          <tbody>
+            <% @lessons.each do |lesson| %>
+              <tr>
+                <td><%= lesson.id %></td>
+                <td>
+                  <a href="<%= surveys_path + '?lesson=' + lesson.id.to_s() %> ">
+                    <%= lesson.name %>
+                  </a>
+                </td>
+                <td>
+                  <%= link_to edit_lesson_path(lesson) do %>
+                    <i class="fa fa-pencil-square-o"> Editar</i>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to lesson, method: :delete, target: :_top,
+                    data: { confirm: 'Tem certeza que deseja apagar?' } do %>
+                    <i class="fa fa-trash-o"> Apagar</i>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to new_survey_path(type: 'multiplechoice', lesson: lesson.id),
+                    target: :_top, class: 'btn btn-default' do %>
+                    <i class="fa fa-plus"> Adicionar missão</i>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table><!-- /.table -->
+        <%= link_to 'Novo Planeta', new_lesson_path, target: :_top, class: 'btn btn-success btn-lg' %>
+      </div><!-- /.mail-box-messages -->
+    </div>
+</div>

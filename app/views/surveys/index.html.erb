@@ -1,20 +1,16 @@
 <div class="container">
   <div class="row questionnaires_<%= action_name %>">
-    <h1>
-      Missões
-    </h1>
-    <div class="col-md-9">
+    <h1><%= @lesson.name if @lesson %></h1>
+    <div class="col-md-10 col-md-offset-1">
       <% if @surveys.empty? %>
-        <p> Não há lições. </p>
+        <p>Ainda não há missões neste planeta.</p>
       <% else %>
-        <div class="row bootstrap snippets">
+        <h2>Missões</h2>
+        <div class="row">
           <%= render partial: 'survey', collection: @surveys %>
         </div>
         <%= paginate @surveys %>
       <% end %>
-    </div>
-    <div class="col-md-3 sidebar">
-      <%= render 'shared/ranking' %>
     </div>
   </div>
 </div>

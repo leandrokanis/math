@@ -120,15 +120,16 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   -webkit-border-radius: 50px;
   border-radius: 20px;
 }
+
 label.btn {
-    padding: 18px 60px;
-    white-space: normal;
-    -webkit-transform: scale(1.0);
-    -moz-transform: scale(1.0);
-    -o-transform: scale(1.0);
-    -webkit-transition-duration: .3s;
-    -moz-transition-duration: .3s;
-    -o-transition-duration: .3s
+  padding: 18px 60px;
+  white-space: normal;
+  -webkit-transform: scale(1.0);
+  -moz-transform: scale(1.0);
+  -o-transform: scale(1.0);
+  -webkit-transition-duration: .3s;
+  -moz-transition-duration: .3s;
+  -o-transition-duration: .3s
 }
 
 label.btn:hover {
@@ -137,6 +138,7 @@ label.btn:hover {
     -moz-transform: scale(1.1);
     -o-transform: scale(1.1)
 }
+
 label.btn-block {
     text-align: left;
     position: relative;
@@ -898,4 +900,11 @@ label .fa {
 
 .content{
   background-color: #FFF;
+}
+
+.btn-bloom{
+  padding: 8px 12px !important;
+  -webkit-transition-duration: 0.1s !important;
+  -moz-transition-duration: 0.1s !important;
+  -o-transition-duration: 0.1s !important
 }

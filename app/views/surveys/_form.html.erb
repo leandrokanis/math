@@ -2,22 +2,25 @@
   <%= f.hidden_field :survey_type, value: @survey.survey_type %>
   <div class='field'>
     <div class='row'>
-      <div class='form-group col-sm-6'>
+      <div class='form-group col-sm-9'>
         <%= f.label :name, "Título" %>
         <%= f.text_field :name, class: 'form-control' %>
       </div>
-      <div class='form-group col-sm-2'>
-        <%= f.label :bloom_level, 'Bloom' %>
-        <%= f.number_field :bloom_level, min: 1, max: 3, class: 'form-control' %>
+      <div class='form-group col-sm-3'>
+        <%= f.label :bloom_level, "Nível em Bloom" %><br />
+        <div class="btn-group" data-toggle="buttons">
+          <%= f.label :bloom_level, :value => "1", class: "btn btn-primary btn-bloom"  do %>
+          1 <%= f.radio_button :bloom_level, 1 %>
+          <% end %>
+          <%= f.label :bloom_level, :value => "2", class: "btn btn-primary btn-bloom"  do  %>
+          2  <%= f.radio_button :bloom_level, 2 %>
+          <% end %>
+          <%= f.label :bloom_level, :value => "3", class: "btn btn-primary btn-bloom"  do  %>
+          3  <%= f.radio_button :bloom_level, 3 %>
+          <% end %>
+        </div>
       </div>
-      <div class='form-group col-sm-2'>
-        <%= f.label :attempts_number, 'Tentativas' %>
-        <%= f.number_field :attempts_number, min: 0, class: 'form-control' %>
-      </div>
-      <div class='form-group col-sm-2'>
-        <%= f.label :active, "Ativo" %>
-        <%= f.select :active, ['true', 'false'], {}, class: 'form-control' %>
-      </div>
+      <%= f.hidden_field :lesson_id, value: params['lesson'] %>
     </div>
     <div class='row'>
       <div class='form-group col-sm-12'>
@@ -25,7 +28,6 @@
         <%= f.text_area :description, size: '100x5', class: 'form-control', style: 'max-width: 100%;' %>
       </div>
     </div>
-
     <div class='appendable'>
       <% if is_score?(@survey.survey_type) %>
         <br/>

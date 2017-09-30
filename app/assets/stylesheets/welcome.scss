@@ -183,3 +183,23 @@ a.wrimagecard:hover, .wrimagecard-topimage:hover {
 .ver-turma:hover{background: linear-gradient(140deg,#00467F,#A5CC82);}
 .ver-relatorio{background: linear-gradient(40deg,#00c3ff,#ffff1c)}
 .ver-relatorio:hover{background: linear-gradient(140deg,#00c3ff,#ffff1c)}
+
+.bloco_principal{
+  margin-top: 20px;
+}
+
+.bloco_planetas{
+  background-color: #FFF;
+  padding: 20px 40px;
+}
+
+.planeta{
+  text-align: center;
+  transition: all cubic-bezier(0.36, -0.87, 0, 2.52) 200ms;
+  margin-top: 50px;
+}
+
+.planeta:hover{
+  -webkit-transform: translate(0px, -10px) scale(1.2);
+  transform: translate(0px, -10px) scale(1.2);
+}
