@@ -1,5 +1,5 @@
 module UsersHelper
-  def list_users
-    User.all
+  def get_ranking
+    User.where(student: true).order(experience: :desc)
   end
 end

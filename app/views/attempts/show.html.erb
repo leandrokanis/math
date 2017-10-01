@@ -4,14 +4,14 @@
       <% if @attempt.winner %>
         <div class="modal-header">
           <p><%= @attempt.survey.name %></p>
-          <h2>Missão cumprida! +10 XP</h2>
+          <h2>Missão cumprida! <span class="alert alert-success">+10 XP</span></h2>
           <p>Pontuação: <%= @attempt.score %> pontos</p>
         </div>
         <div class="modal-body celebration">
           <%= image_tag "celebration.gif" %>
         </div>
         <div class="modal-footer">
-          <%= link_to 'Continuar', surveys_path, class: 'btn btn-lg btn-success' %>
+          <%= link_to 'Continuar', surveys_path(lesson: @attempt.survey.lesson_id), class: 'btn btn-lg btn-success' %>
         </div>
       <% else %>
         <div class="modal-header">

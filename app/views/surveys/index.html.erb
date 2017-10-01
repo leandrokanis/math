@@ -7,7 +7,11 @@
       <% else %>
         <h2>Missões</h2>
         <div class="row">
-          <%= render partial: 'survey', collection: @surveys %>
+          <% if params[:lesson] %>
+            <%= render partial: 'survey', collection: @surveys %>
+          <% elsif current_user.teacher %>
+            <% controller.redirect_to lessons_path %>
+          <% end %>
         </div>
         <%= paginate @surveys %>
       <% end %>
