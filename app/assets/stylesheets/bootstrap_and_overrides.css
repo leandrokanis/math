@@ -908,3 +908,25 @@ label .fa {
   -moz-transition-duration: 0.1s !important;
   -o-transition-duration: 0.1s !important
 }
+
+
+.experience_block{
+  padding: 20px;
+  text-align: center;
+  display: grid;
+}
+
+.experience_block h1 {
+  font-size: 20px;
+}
+
+.experience_number {
+  font-size: 40px;
+  color: #FFF;
+  font-weight: bold;
+  background-image: url("experience-background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 70px 50px;
+  margin-top: 20px;
+}
