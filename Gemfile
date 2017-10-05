@@ -27,7 +27,7 @@ gem 'puma' # app server
 gem 'survey' # our gem
 gem 'twitter-bootstrap-rails'
 gem 'kaminari' # pagination
-gem 'client_side_validations', github: 'DavyJonesLocker/client_side_validations' # validates forms on the client side
+gem 'client_side_validations'
 gem 'newrelic_rpm' # new relic instrumentation (heroku plugin)
 
 # Use ActiveModel has_secure_password
@@ -58,6 +58,6 @@ end
 
 gem 'rails_12factor', group: :production
 
-ruby "2.2.2"
+ruby "2.3.5"
 gem "paperclip", "~> 5.0.0"
 gem 'devise'
