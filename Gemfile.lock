@@ -134,6 +134,7 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
+    pg (0.21.0)
     pry (0.11.1)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -255,6 +256,7 @@ DEPENDENCIES
   kaminari
   newrelic_rpm
   paperclip (~> 5.0.0)
+  pg
   pry-byebug
   pry-rails
   pry-rescue
