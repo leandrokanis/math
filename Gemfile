@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -39,7 +38,12 @@ gem 'newrelic_rpm' # new relic instrumentation (heroku plugin)
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+group :production, :test do
+  gem 'pg'
+end
+
 group :development, :test do
+  gem 'sqlite3'
   gem 'better_errors' # improves the error page
   gem 'binding_of_caller'  # used by better_errors
   gem 'awesome_print'  # awesome variable print
