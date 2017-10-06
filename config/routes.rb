@@ -18,7 +18,7 @@ Rails.application.routes.draw do
      get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-  get '/wakemydino.txt', :to => redirect('/')
+  get '/wakemydino.txt', :to => redirect('/wakemydino.txt')
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
