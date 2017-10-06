@@ -61,8 +61,6 @@ group :development, :test do
   gem 'spring'
 end
 
-gem 'rails_12factor', group: :production
-
 ruby "2.3.5"
 gem "paperclip", "~> 5.0.0"
 gem 'devise'
