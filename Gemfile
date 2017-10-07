@@ -63,5 +63,5 @@ group :development, :test do
 end
 
 ruby "2.3.5"
-gem "paperclip", "~> 5.0.0"
+gem "paperclip"
 gem 'devise'
