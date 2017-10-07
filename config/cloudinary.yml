@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: planetarioga
+  api_key: '586528544316856'
+  api_secret: 414A0gFKrXWmqKaaB66JOlFlreI
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: planetarioga
+  api_key: '586528544316856'
+  api_secret: 414A0gFKrXWmqKaaB66JOlFlreI
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: planetarioga
+  api_key: '586528544316856'
+  api_secret: 414A0gFKrXWmqKaaB66JOlFlreI
+  enhance_image_tag: true
+  static_image_support: false

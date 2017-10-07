@@ -41,7 +41,6 @@ gem 'newrelic_rpm' # new relic instrumentation (heroku plugin)
 group :production, :test do
   gem 'pg'
   gem 'rails_12factor'
-  gem 'aws-sdk', '~> 3'
 end
 
 group :development, :test do
@@ -63,5 +62,7 @@ group :development, :test do
 end
 
 ruby "2.3.5"
+
+gem 'paperclip-cloudinary'
 gem "paperclip", "~> 5.0.0"
 gem 'devise'
