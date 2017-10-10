@@ -1,7 +1,18 @@
 <div class="container">
-  <h2>
-    Edit Survey
-    <small> <%= render 'survey_label', survey_type: @survey.survey_type %> </small>
-  </h2>
-  <%= render 'form' %>
+  <div class="col-sm-8 col-sm-offset-2">
+    <h2 style="text-align: center;">
+      Editar missão
+    </h2>
+    <h3>
+      <span class="label label-info">
+        <%= @lesson.find(@survey.lesson_id).name %>
+      </span>
+    </h3>
+    <hr/>
+
+    <%= render 'form' %>
+  </div>
 </div>
+<script type="text/javascript">
+  $(input="#survey_survey_bloom_level_<%= @survey.bloom_level %>").click();
+</script>

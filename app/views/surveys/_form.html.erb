@@ -16,11 +16,17 @@
           2  <%= f.radio_button :bloom_level, 2 %>
           <% end %>
           <%= f.label :bloom_level, :value => "3", class: "btn btn-primary btn-bloom"  do  %>
-          3  <%= f.radio_button :bloom_level, 3 %>
+          3  <%= f.radio_button :bloom_level, 3, :checked => true  %>
           <% end %>
         </div>
       </div>
-      <%= f.hidden_field :lesson_id, value: params['lesson'] %>
+
+      <% if params['lesson'] %>
+        <%= f.hidden_field :lesson_id, value: params['lesson'] %>
+      <% elsif @survey.lesson_id %>
+        <%= f.hidden_field :lesson_id, value: @survey.lesson_id %>
+      <% end %>
+
     </div>
     <div class='row'>
       <div class='form-group col-sm-12'>

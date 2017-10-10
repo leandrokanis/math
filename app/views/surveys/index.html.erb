@@ -1,10 +1,23 @@
 <div class="container">
   <div class="row questionnaires_<%= action_name %>">
     <h1><%= @lesson.name if @lesson %></h1>
-    <div class="col-md-10 col-md-offset-1">
       <% if @surveys.empty? %>
-        <p>Ainda não há missões neste planeta.</p>
+
+        <% if current_user.teacher %>
+          <div class="col-md-4 col-md-offset-4 center">
+            <p>Ainda não há missões neste planeta.</p>
+            <%= link_to new_survey_path(type: 'multiplechoice', lesson: @lesson.id),
+              target: :_top, class: 'btn btn-default' do %>
+            <i class="fa fa-plus"> Adicionar missão</i>
+            <% end %>
+          </div>
+        <% elsif current_user.student %>
+          <div class="col-md-4 col-md-offset-4">
+            <p>Ainda não há missões neste planeta.</p>
+          </div>
+        <% end %>
       <% else %>
+      <div class="col-md-10 col-md-offset-1">
         <h2>Missões</h2>
         <div class="row">
           <% if params[:lesson] %>
@@ -14,7 +27,7 @@
           <% end %>
         </div>
         <%= paginate @surveys %>
+      </div>
       <% end %>
-    </div>
   </div>
 </div>

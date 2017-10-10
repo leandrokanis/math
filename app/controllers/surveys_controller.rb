@@ -21,7 +21,7 @@ class SurveysController < ApplicationController
     def create
       @survey = Survey::Survey.new(params_whitelist)
       if @survey.valid? && @survey.save
-        default_redirect
+        redirect_to surveys_path(lesson: @survey.lesson_id)
       else
         build_flash(@survey)
         render :new
@@ -29,6 +29,7 @@ class SurveysController < ApplicationController
     end
 
     def edit
+      @lesson = Lesson
     end
 
     def show
@@ -36,7 +37,7 @@ class SurveysController < ApplicationController
 
     def update
       if @survey.update_attributes(params_whitelist)
-        default_redirect
+        redirect_to surveys_path(lesson: @survey.lesson_id)
       else
         build_flash(@survey)
         render :edit

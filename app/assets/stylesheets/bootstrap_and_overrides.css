@@ -903,7 +903,7 @@ label .fa {
 }
 
 .btn-bloom{
-  padding: 8px 12px !important;
+  padding: 11px 22px !important;
   -webkit-transition-duration: 0.1s !important;
   -moz-transition-duration: 0.1s !important;
   -o-transition-duration: 0.1s !important
@@ -929,4 +929,19 @@ label .fa {
   background-position: center;
   padding: 70px 50px;
   margin-top: 20px;
+}
+
+.center{text-align: center;}
+
+.form-control{
+  height: 45px;
+  font-size: 20px;
+}
+
+.appendable {
+  margin-left: 30px;
+}
+
+.form-group {
+    margin-bottom: 5px;
 }
