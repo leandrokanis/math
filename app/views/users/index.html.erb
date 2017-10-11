@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row questionnaires_<%= action_name %>">
+    <h1>Usuários</h1>
+    <div class="col-md-8 col-md-offset-2">
+      <div class="table-responsive list-messages">
+          <% if user_signed_in? and current_user.teacher?%>
+        <h3>Alunos</h3>
+        <table class="table table-hover table-striped">
+          <tbody>
+            <% @students.each do |user| %>
+              <tr>
+                <td><%= user.id %></td>
+                <td>
+                    <%= link_to user_path(user) do %>
+                    <%= user.username %>
+                    <% end %>
+                  </a>
+                </td>
+                <td>
+                  Experiência: <%= user.experience %>
+                </td>
+                <td>
+                  <%= link_to edit_user_registration_path(user) do %>
+                    <i class="fa fa-pencil-square-o"> Editar</i>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to user, method: :delete, target: :_top,
+                    data: { confirm: 'Tem certeza que deseja apagar?' } do %>
+                    <i class="fa fa-trash-o"> Apagar</i>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table><!-- /.table -->
+
+        <h3>Professores</h3>
+        <table class="table table-hover table-striped">
+          <tbody>
+            <% @teachers.each do |user| %>
+              <tr>
+                <td><%= user.id %></td>
+                <td>
+                    <%= link_to user_path(user) do %>
+                    <%= user.username %>
+                    <% end %>
+                  </a>
+                </td>
+                <td>
+                  <%= link_to edit_user_registration_path(user) do %>
+                    <i class="fa fa-pencil-square-o"> Editar</i>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to user, method: :delete, target: :_top,
+                    data: { confirm: 'Tem certeza que deseja apagar?' } do %>
+                    <i class="fa fa-trash-o"> Apagar</i>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table><!-- /.table -->
+
+        <% else
+         controller.redirect_to root_path
+        end %>
+
+      </div><!-- /.mail-box-messages -->
+    </div>
+</div>

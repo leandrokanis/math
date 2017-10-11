@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources 'surveys'
   resources 'attempts'
+  resources 'users'
   # resources 'users', only: [:create]
 
   delete 'attempts/:survey_id/:user_id' => 'attempts#delete_user_attempts', as: :delete_user_attempts

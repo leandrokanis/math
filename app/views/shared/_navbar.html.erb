@@ -16,13 +16,20 @@
         <ul class="nav navbar-nav">
           <li><%= link_to 'Página Inicial', root_path, target: :_top %></li>
           <% if user_signed_in? %>
-          <li class="<%= is_active?(surveys_path) %>">
-            <% if user_signed_in? and current_user.student?%>
+            <% if current_user.student?%>
+            <li class="<%= is_active?(surveys_path) %>">
               <%= link_to "Planetas", root_path, target: :_top %>
-            <% elsif user_signed_in? and current_user.teacher?%>
+            </li>
+
+            <% elsif current_user.teacher?%>
+            <li class="<%= is_active?(surveys_path) %>">
               <%= link_to "Planetas", lessons_path, target: :_top %>
+            </li>
+            <li class="<%= is_active?(surveys_path) %>">
+              <%= link_to "Alunos", users_path, target: :_top %>
+            </li>
             <% end -%>
-          </li>
+
           <% end -%>
         </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -43,7 +50,11 @@
             <% if user_signed_in? %>
             <li>
               <p class="navbar-text">
+
+                <%= link_to user_path(current_user), target: :_top  do %>
                 <%= current_user.username %>
+                <% end %>
+
               </p>
               <p class="navbar-text">
                 <%= link_to "Sair", destroy_user_session_path, target: :_top  %>
