@@ -2,23 +2,20 @@ Rails.application.routes.draw do
 
   resources :lessons
   get 'welcome/index'
+  root 'welcome#index'
+
 
   devise_for :users
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  root 'welcome#index'
   resources 'surveys'
   resources 'attempts'
-  resources 'users'
   # resources 'users', only: [:create]
 
-  delete 'attempts/:survey_id/:user_id' => 'attempts#delete_user_attempts', as: :delete_user_attempts
   devise_scope :user do
      get '/users/sign_out' => 'devise/sessions#destroy'
   end
+  resources 'users'
 
+  delete 'attempts/:survey_id/:user_id' => 'attempts#delete_user_attempts', as: :delete_user_attempts
   get '/wakemydyno.txt', :to => redirect('/wakemydyno.txt')
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

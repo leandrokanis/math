@@ -1,17 +1,17 @@
 <div class="container">
   <% if @survey.nil? %>
     <p>
-      This survey is no longer available
+      Esta pesquisa já não está disponível
     </p>
   <% elsif @survey.avaliable_for_participant?(@participant) %>
     <%= render 'form' %>
   <% else %>
     <p>
-      You have spent all the possible attempts to answer this Survey
+      Você gastou todas as tentativas possíveis para responder esta Pesquisa
     </p>
     <p>
       <%= link_to delete_user_attempts_path(@survey.id, session[:user_id]), method: :delete do %>
-        Click here to reset the attempts
+        Clique aqui para reiniciar as tentativas
       <% end %>
     </p>
   <% end -%>
