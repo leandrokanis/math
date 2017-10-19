@@ -1,0 +1,5 @@
+en:
+  surveys_controller:
+    create: A missão foi criada com sucesso
+    update: A missão foi atualizado com sucesso
+    destroy: A missão foi destruída com sucesso
